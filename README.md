@@ -1,5 +1,7 @@
 # Gruppexamination – Cupify
 
+* [Grupper](https://drive.google.com/file/d/1XPNy1gmh7XdaDQixLucy4-My6_u0xDVX/view?usp=sharing)
+
 ## Introduktion
 
 I denna gruppexamination ska ni utveckla **Cupify**, ett REST API för att administrera idrottsturneringar. Systemet ska kunna hantera turneringar, deltagande lag, matcher och matchresultat.
