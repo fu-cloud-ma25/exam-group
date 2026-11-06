@@ -1,6 +1,7 @@
 # Gruppexamination – Cupify
 
 * [Grupper](https://drive.google.com/file/d/1XPNy1gmh7XdaDQixLucy4-My6_u0xDVX/view?usp=sharing)
+* [Inspelad genomgång](https://funet.sharepoint.com/:v:/s/MobilapplikationsutvecklareYhdistans-Klass25/IQAnyAxf5Py3RZOeznaUjSxYASgWFhSwNWUYsZrC8bxYQcY?e=SUVziO)
 
 ## Introduktion
 
