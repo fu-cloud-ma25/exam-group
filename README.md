@@ -6,8 +6,6 @@ I denna gruppexamination ska ni utveckla **Cupify**, ett REST API för att admin
 
 Projektet genomförs i grupper om 4–5 personer och syftar till att ni ska få tillämpa era kunskaper inom backendutveckling, REST API, AWS Lambda, API Gateway och DynamoDB.
 
-Ni har **fem arbetsdagar** på er att genomföra examinationen. Uppgiften är planerad för att kunna slutföras på ungefär tre arbetsdagar vid normal arbetstakt, vilket ger utrymme för problemlösning, testning och förbättringar.
-
 ## Uppgiften
 
 Ni har fått i uppdrag att utveckla backend-systemet för Cupify, en tjänst som hjälper idrottsföreningar och arrangörer att administrera sina turneringar.
@@ -22,7 +20,7 @@ Varje turnering ska kunna innehålla ett antal deltagande lag och matcher. Match
 
 - Skapa nya turneringar.
 - Hämta information om en eller flera turneringar.
-- Uppdatera befintliga turneringar.
+- Uppdatera status för befintliga turneringar.
 - Ta bort turneringar som inte innehåller några lag eller matcher.
 
 **Lag**
@@ -40,7 +38,7 @@ Varje turnering ska kunna innehålla ett antal deltagande lag och matcher. Match
 - Ta bort matcher.
 - Registrera matchresultat och markera matcher som färdigspelade.
 
-En separat API-specifikation med endpoints, HTTP-metoder och förväntade JSON-strukturer tillhandahålls.
+Samtliga endpoints, datamodeller, HTTP-metoder, förväntade JSON-strukturer och affärsregler beskrivs i den separata [API-specifikationen](./api-spec.md), och måste följas.
 
 ### Bonusuppgift – Tabellställning
 
@@ -57,6 +55,8 @@ Poängfördelningen ska vara 3 poäng för vinst, 1 poäng för oavgjort och 0 p
 
 Tabellställningen ska beräknas dynamiskt utifrån färdigspelade matcher och behöver inte lagras i databasen.
 
+Detaljerade krav för bonusuppgiften finns i [API-specifikationen](./api-spec.md#7-bonusuppgift--tabellställning).
+
 **Bonusuppgiften är helt frivillig och påverkar inte bedömningen för godkänt.**
 
 ## Grupparbete
@@ -67,7 +67,7 @@ Ni ansvarar gemensamt för att planera, utveckla, testa och färdigställa proje
 
 Arbetet ska organiseras så att samtliga gruppmedlemmar deltar aktivt i utvecklingen och får möjlighet att bidra med kod.
 
-Ni ska använda **Git och GitHub** för versionshantering och samarbete.
+Ni ska använda **Git och GitHub** för versionshantering och samarbete, och kan med fördel visualisera era arbetsuppgifter med hjälp av **GitHub Projects**.
 
 Det innebär att:
 
@@ -106,7 +106,7 @@ Det finns inget krav på att använda Global Secondary Indexes (GSI).
 
 ### REST API
 
-API ska följa REST-principer och använda lämpliga HTTP-metoder för respektive operation.
+API ska följa REST-principer och använda de HTTP-metoder som anges i [API-specifikationen](./api-spec.md).
 
 API ska:
 
@@ -116,9 +116,11 @@ API ska:
 - Validera inkommande data.
 - Ha en tydlig och konsekvent struktur.
 
+Samtliga obligatoriska endpoints ska implementeras enligt [API-specifikationen](./api-spec.md#8-sammanställning-av-endpoints).
+
 ### Avgränsningar
 
-Följande ingår inte i examinationen:
+Följande ingår **inte** i examinationen:
 
 - Frontend eller grafiskt användargränssnitt.
 - Inloggning, registrering eller autentisering.
@@ -132,7 +134,7 @@ För att examinationen ska bedömas som godkänd ska följande krav vara uppfyll
 
 ### Funktionella krav
 
-- [ ] Det ska gå att skapa, hämta, uppdatera och ta bort turneringar.
+- [ ] Det ska gå att skapa, hämta och ta bort turneringar samt uppdatera deras status.
 - [ ] Det ska gå att registrera, hämta, uppdatera och ta bort lag inom en turnering.
 - [ ] Det ska gå att skapa, hämta, uppdatera och ta bort matcher inom en turnering.
 - [ ] En match ska innehålla två olika lag som båda tillhör samma turnering.
@@ -140,6 +142,7 @@ För att examinationen ska bedömas som godkänd ska följande krav vara uppfyll
 - [ ] Matchresultat får inte innehålla negativa mål.
 - [ ] En turnering får inte kunna raderas om den innehåller lag eller matcher.
 - [ ] Ett lag får inte kunna raderas om det förekommer i en match.
+- [ ] Samtliga obligatoriska funktioner och affärsregler i [API-specifikationen](./api-spec.md) ska vara implementerade.
 
 ### Tekniska krav
 
@@ -147,7 +150,7 @@ För att examinationen ska bedömas som godkänd ska följande krav vara uppfyll
 - [ ] API ska använda AWS Lambda och API Gateway.
 - [ ] Projektet ska vara konfigurerat och driftsatt med Serverless Framework.
 - [ ] Data ska lagras i DynamoDB med tre separata tabeller.
-- [ ] API ska implementera de endpoints som anges i den separata API-specifikationen.
+- [ ] API ska implementera de obligatoriska endpoints som anges i [API-specifikationen](./api-spec.md).
 - [ ] API ska använda korrekta HTTP-metoder och lämpliga statuskoder.
 - [ ] API ska hantera felaktig indata och saknade resurser på ett kontrollerat sätt.
 - [ ] Projektet ska vara versionshanterat med Git och GitHub.
@@ -159,12 +162,11 @@ För att examinationen ska bedömas som godkänd ska följande krav vara uppfyll
 Examinationen lämnas in genom att en gruppmedlem skickar in följande:
 
 1. **Länk till GitHub-repository** som innehåller projektets källkod.
-2. **Länk till det driftsatta API** i AWS.
-3. **Namn på samtliga gruppmedlemmar** som deltagit i projektet.
+2. **Länk till det driftsatta API** i AWS. Denna läggs i er Readme-fil.
 
-GitHub-repositoryt ska innehålla en README-fil med instruktioner för hur projektet installeras och driftsätts, samt hänvisning till API-dokumentationen enligt den separata specifikationen.
+GitHub-repositoryt ska innehålla en README-fil med instruktioner för hur projektet installeras och driftsätts.
 
-**Deadline:** [Datum och klockslag anges av läraren]
+**Deadline:** 13/11 kl 23:59
 
 ### Bedömning
 
